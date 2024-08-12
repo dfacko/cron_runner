@@ -1,0 +1,12 @@
+[package]
+name = "cron_runner"
+version = "0.1.0"
+edition = "2021"
+authors = ["Dominik Fačko <dominik.facko@hotmail.com>"]
+license = "MIT"
+keywords = ["cron", "runner"]
+description = "Cron runner that runs your scheduled jobs"
+
+[dependencies]
+chrono = "0.4.38"
+cron = "0.12.1"
