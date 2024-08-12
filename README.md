@@ -10,3 +10,35 @@ If all workers are busy new jobs will not be run untill a worker is free, the fi
 If you start the runner with 0 worker threads, any time a job should run a new thread will be spawned for the job that will execute it and return.
 If for some reason a worker could not be spawned, the Runner will try to run the job in its main thread, blocking scheduling for the rest of the jobs untill it is done.
 ## Example
+
+```
+ use cron_runner::{Job, Runner, Schedule};
+
+ struct PrintJob {
+     message: String,
+ }
+
+ impl Job for PrintJob {
+     fn execute(&self) {
+         println!("{}", self.message);
+     }
+
+     fn schedule(&self) -> Schedule {
+         "0 * * * * *".parse().unwrap()
+     }
+ }
+
+ fn main() {
+     let mut runner = Runner::new(2);
+
+     runner.add_job(Box::new(PrintJob {
+         message: "Print job".to_string(),
+     }));
+
+     runner.run();
+
+     loop {
+         std::thread::sleep(std::time::Duration::from_secs(5));
+     }
+ }
+ ```
