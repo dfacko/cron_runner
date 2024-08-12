@@ -6,6 +6,8 @@ authors = ["Dominik Fačko <dominik.facko@hotmail.com>"]
 license = "MIT"
 keywords = ["cron", "runner"]
 description = "Cron runner that runs your scheduled jobs"
+repository = "https://github.com/dfacko/cron_runner"
+documentation = "https://docs.rs/cron_runner/"
 
 [dependencies]
 chrono = "0.4.38"
