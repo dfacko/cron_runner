@@ -11,7 +11,7 @@ If you start the runner with 0 worker threads, any time a job should run a new t
 If for some reason a worker could not be spawned, the Runner will try to run the job in its main thread, blocking scheduling for the rest of the jobs untill it is done.
 ## Example
 
-```
+```rust
  use cron_runner::{Job, Runner, Schedule};
 
  struct PrintJob {
@@ -42,3 +42,11 @@ If for some reason a worker could not be spawned, the Runner will try to run the
      }
  }
  ```
+ 
+##Output
+ ```shell
+ Output:
+Worker started job 0 at 15:12:59.632829567
+Print job
+Worker finished job 0 at 15:12:59.632854926
+```

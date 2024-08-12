@@ -46,12 +46,13 @@
 //!     }
 //! }
 //! ```
+//!
 //! ```
 //! Output:
 //! Worker started job 0 at 15:12:59.632829567
 //! Print job
 //! Worker finished job 0 at 15:12:59.632854926
-//!
+//! ```
 //!
 
 mod job;
